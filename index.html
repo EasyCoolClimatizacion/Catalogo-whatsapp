@@ -3,333 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyCool | Climatización Profesional</title>
+    <title>EasyCool | Climatización e Ingeniería</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Iconos profesionales FontAwesome -->
+    <!-- Iconos FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Fuentes corporativas -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Fuente Poppins (Logo y Marca) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root { scroll-behavior: smooth; }
-        body { font-family: 'Roboto', sans-serif; background-color: #f8fafc; }
-        .font-brand { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f3f4f6; color: #1f2937; margin: 0; }
         
-        /* Animación para las tarjetas de equipos */
-        .card-pro { 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        /* === ESTILOS DEL LOGO HORIZONTAL === */
+        .logo-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f2937;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
         }
-        .card-pro:hover { 
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        .logo-tagline {
+            font-size: 10px;
+            font-weight: 400;
+            color: #6b7280;
+            text-transform: capitalize;
+            line-height: 1;
         }
-
-        /* PORTADA: Sin imagen, degradado profesional de ingeniería */
-        .hero-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #2563eb 100%);
-            position: relative;
-        }
-
-        /* Estilo para cuando la imagen no carga */
-        .img-placeholder {
-            background-color: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 3rem;
-            height: 100%;
-            width: 100%;
+        @media (min-width: 768px) {
+            .logo-name { font-size: 32px; }
+            .logo-tagline { font-size: 14px; }
         }
 
-        /* Animación del botón flotante */
-        @keyframes pulse-wsp {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        /* Hero sin imagen - Fondo corporativo sólido */
+        .hero-clean {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
-        .wsp-animation { animation: pulse-wsp 2s infinite; }
+
+        /* Estilo de Tarjetas */
+        .card-custom {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .card-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animación WhatsApp */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .wsp-pulse { animation: pulse-green 2s infinite; }
     </style>
 </head>
-<body class="text-slate-900 bg-slate-50">
+<body>
 
-    <!-- Barra de Navegación -->
-    <nav class="bg-white/95 backdrop-blur-lg shadow-sm fixed w-full z-[100] border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <!-- LOGO CORPORATIVO ORIGINAL (3 Barras) -->
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 md:w-14">
+    <!-- Navbar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 md:h-24 flex justify-between items-center">
+            
+            <!-- LOGO HORIZONTAL INTEGRADO -->
+            <div class="flex items-center gap-3 md:gap-5">
+                <div class="w-10 h-10 md:w-16 md:h-16 flex-shrink-0">
                     <svg width="100%" height="100%" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="5" width="50" height="10" rx="5" fill="#3B82F6" opacity="0.8"/>
                         <rect x="5" y="20" width="45" height="10" rx="5" fill="#60A5FA" opacity="0.9"/>
                         <rect x="10" y="35" width="40" height="10" rx="5" fill="#93C5FD"/>
                     </svg>
                 </div>
-                <div class="flex flex-col leading-none">
-                    <span class="font-brand font-bold text-xl md:text-2xl tracking-tighter text-slate-900 uppercase">EasyCool</span>
-                    <span class="font-brand text-[9px] md:text-xs uppercase tracking-[0.3em] text-blue-600 font-bold">Climatización</span>
+                <div class="flex flex-col">
+                    <span class="logo-name tracking-tighter">EASYCOOL</span>
+                    <span class="logo-tagline">Climatización</span>
                 </div>
             </div>
-            
-            <div class="flex items-center gap-4">
-                <a href="#equipos" class="hidden md:block text-slate-600 hover:text-blue-600 font-medium transition text-sm">Equipos</a>
-                <a id="nav-btn-wsp" href="#" class="bg-green-500 text-white px-5 py-2 rounded-full font-bold text-xs flex items-center gap-2 hover:bg-green-600 transition shadow-lg wsp-animation uppercase tracking-wider">
-                    <i class="fab fa-whatsapp text-lg"></i> <span class="hidden sm:inline">WhatsApp</span>
+
+            <!-- Acceso Directo Móvil -->
+            <div class="flex items-center">
+                <a id="nav-wsp" href="#" class="bg-green-500 text-white px-4 py-2 rounded-xl font-bold text-xs md:text-sm flex items-center gap-2 hover:bg-green-600 transition wsp-pulse">
+                    <i class="fab fa-whatsapp text-base"></i> <span class="hidden sm:inline uppercase">Cotizar</span>
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Botón Flotante Lateral -->
-    <a id="float-btn-wsp" href="#" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl z-[90] hover:scale-110 transition-transform">
+    <!-- Botón Flotante WhatsApp -->
+    <a id="float-wsp" href="#" class="fixed bottom-6 right-6 w-14 h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl z-[100] hover:scale-110 transition-transform">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Portada con Degradado (Sin Imagen) -->
-    <section class="hero-section h-[60vh] md:h-[75vh] flex items-center justify-center overflow-hidden pt-20">
-        <div class="relative z-10 text-center px-4 max-w-4xl">
-            <div class="inline-block px-4 py-1.5 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-100 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-8">
-                Climatización Residencial Certificada
+    <!-- SECCIÓN DE BIENVENIDA (Hero sin imagen de fondo) -->
+    <section class="hero-clean relative pt-32 pb-20 md:pt-48 md:pb-32 flex items-center justify-center text-center">
+        <div class="relative z-10 px-4 max-w-4xl">
+            <div class="inline-block px-4 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6">
+                Ingeniería aplicada al confort
             </div>
-            <h1 class="font-brand text-4xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight uppercase">
-                Ingeniería <span class="text-blue-400">y Confort</span>
+            <h1 class="text-3xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Ingeniería y Confort <br class="hidden md:block"> para su Hogar
             </h1>
-            <p class="text-slate-300 text-lg md:text-xl mb-12 font-light max-w-2xl mx-auto leading-relaxed">
-                Instalaciones profesionales bajo normativa SEC en Santiago. <br class="hidden md:block"> Diseñamos el clima ideal para su bienestar.
+            <p class="text-slate-300 text-sm md:text-xl mb-10 font-light max-w-2xl mx-auto">
+                Instalaciones certificadas SEC y mantenimiento profesional en Santiago. Especialistas en eficiencia energética.
             </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                <a href="#equipos" class="w-64 sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-2xl font-bold text-lg transition-all shadow-xl shadow-blue-900/40 tracking-wide">Ver Ofertas</a>
-                <a href="#servicios" class="w-64 sm:w-auto bg-white/5 hover:bg-white/10 text-white border border-white/30 px-12 py-4 rounded-2xl font-bold text-lg transition-all tracking-wide">Servicios Técnicos</a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#equipos" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-bold text-base transition-all shadow-lg">Ver Equipos</a>
+                <a href="#servicios" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-8 py-3 rounded-2xl font-bold text-base transition-all">Servicios Técnicos</a>
             </div>
         </div>
-        <!-- Decoración de fondo -->
-        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-50 to-transparent opacity-10"></div>
     </section>
 
-    <!-- Sección Equipos Instalados -->
-    <main class="max-w-7xl mx-auto px-4 py-24" id="equipos">
-        <div class="text-center mb-20">
-            <h2 class="font-brand text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tighter uppercase">Equipos Instalados</h2>
-            <div class="w-24 h-1.5 bg-blue-600 mx-auto rounded-full mb-8"></div>
-            <p class="text-slate-500 text-lg md:text-xl font-light">Equipos de alta eficiencia con instalación profesional "Llave en Mano".</p>
+    <!-- Equipos -->
+    <main class="max-w-7xl mx-auto px-4 py-16 md:py-24" id="equipos">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4 uppercase tracking-tighter">Equipos Instalados</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            <p class="text-slate-500 mt-4 text-sm md:text-lg">Pack completo: Equipo + Instalación Premium + IVA Incluido.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Hisense Hi-Vida -->
-            <div class="card-pro bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden flex flex-col shadow-lg">
-                <div class="relative h-72 md:h-80 bg-white">
-                    <!-- BUSCA: aire.jpg -->
-                    <img src="aire.jpg" class="w-full h-full object-contain p-8" alt="Pack Hisense" 
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="img-placeholder hidden flex-col text-center px-4">
-                        <i class="fa-solid fa-snowflake mb-2"></i>
-                        <span class="text-xs uppercase font-bold tracking-widest text-slate-400">Verificar archivo: aire.jpg</span>
-                    </div>
-                    <div class="absolute top-6 left-6 bg-blue-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">Inverter + WiFi</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <!-- Hisense -->
+            <div class="card-custom bg-white rounded-[2rem] overflow-hidden flex flex-col shadow-sm">
+                <div class="h-60 md:h-80 bg-slate-50 flex items-center justify-center p-6">
+                    <img src="aire.jpg" class="max-w-full max-h-full object-contain" alt="Hisense" 
+                         onerror="this.src='https://placehold.co/800x600/f1f5f9/1e293b?text=Equipo+Hisense';">
                 </div>
-                <div class="p-8 md:p-10 flex-grow flex flex-col">
-                    <div class="flex justify-between items-start mb-8">
+                <div class="p-6 md:p-10 flex-grow flex flex-col text-center md:text-left">
+                    <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-6 gap-2">
                         <div>
-                            <h3 class="font-brand text-2xl md:text-3xl font-bold text-slate-900">Hisense Hi-Vida</h3>
-                            <p class="text-slate-400 font-medium text-sm">9.000 BTU - Eficiencia Clase A</p>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-900">Hisense Hi-Vida</h3>
+                            <p class="text-slate-400 text-xs md:text-sm uppercase tracking-widest font-semibold">9.000 BTU Inverter</p>
                         </div>
-                        <div class="text-right">
-                            <span class="block text-4xl font-bold text-blue-600 tracking-tighter" id="price-hisense">$0</span>
-                            <span class="text-[10px] font-bold text-green-600 uppercase tracking-tighter">Instalado IVA Inc.</span>
+                        <div class="text-center md:text-right">
+                            <span class="block text-2xl md:text-4xl font-bold text-blue-600" id="p-hisense">$0</span>
+                            <span class="text-[9px] font-bold text-green-600 uppercase">Instalado IVA Inc.</span>
                         </div>
                     </div>
                     
-                    <div class="space-y-4 mb-10 bg-slate-50 p-6 rounded-3xl border border-slate-100">
-                        <div class="flex items-center gap-3 text-slate-700">
-                            <i class="fa-solid fa-check-circle text-green-500 text-xl"></i>
-                            <span class="text-sm font-bold italic">Kit 3m tuberías + interconexión incluido.</span>
-                        </div>
-                        <ul class="grid grid-cols-1 gap-2 text-xs text-slate-500">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-minus text-blue-400"></i> Bandejas Eléctricas 100x50 y 20x10.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-minus text-blue-400"></i> Soporte reforzado de muro o piso.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-minus text-blue-400"></i> Mano de obra certificada.</li>
+                    <div class="bg-blue-50/50 rounded-2xl p-5 mb-8 border border-blue-100 text-sm">
+                        <ul class="space-y-3 text-slate-600 text-left">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-blue-500"></i> <strong>Kit 3m tuberías + interconexión.</strong></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-blue-500 text-xs"></i> Bandejas Eléctricas 100x50 / 20x10.</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-blue-500 text-xs"></i> Soporte de muro reforzado.</li>
                         </ul>
                     </div>
 
-                    <a id="btn-order-hisense" href="#" class="mt-auto bg-slate-900 text-white text-center py-5 rounded-2xl font-bold uppercase tracking-widest shadow-xl transition hover:bg-blue-600 text-xs">
-                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Solicitar Pack Hisense
+                    <a id="btn-hisense" href="#" class="mt-auto bg-slate-900 text-white text-center py-4 rounded-2xl font-bold hover:bg-slate-800 transition shadow-lg text-sm uppercase tracking-widest">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Solicitar Pack
                     </a>
                 </div>
             </div>
 
-            <!-- Daikin Serie AL -->
-            <div class="card-pro bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden flex flex-col shadow-lg">
-                <div class="relative h-72 md:h-80 bg-white">
-                    <!-- BUSCA: daikin.jpg -->
-                    <img src="daikin.jpg" class="w-full h-full object-contain p-8" alt="Pack Daikin"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="img-placeholder hidden flex-col text-center px-4">
-                        <i class="fa-solid fa-gem mb-2"></i>
-                        <span class="text-xs uppercase font-bold tracking-widest text-slate-400">Verificar archivo: daikin.jpg</span>
-                    </div>
-                    <div class="absolute top-6 left-6 bg-indigo-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">Gama Premium AL</div>
+            <!-- Daikin -->
+            <div class="card-custom bg-white rounded-[2rem] overflow-hidden flex flex-col shadow-sm">
+                <div class="h-60 md:h-80 bg-slate-50 flex items-center justify-center p-6">
+                    <img src="daikin.jpg" class="max-w-full max-h-full object-contain" alt="Daikin"
+                         onerror="this.src='https://placehold.co/800x600/f1f5f9/1e293b?text=Equipo+Daikin';">
                 </div>
-                <div class="p-8 md:p-10 flex-grow flex flex-col">
-                    <div class="flex justify-between items-start mb-8">
+                <div class="p-6 md:p-10 flex-grow flex flex-col text-center md:text-left">
+                    <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-6 gap-2">
                         <div>
-                            <h3 class="font-brand text-2xl md:text-3xl font-bold text-slate-900">Daikin Serie AL</h3>
-                            <p class="text-slate-400 font-medium text-sm">9.000 BTU - Tecnología Japonesa</p>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-900">Daikin Serie AL</h3>
+                            <p class="text-slate-400 text-xs md:text-sm uppercase tracking-widest font-semibold">9.000 BTU Gama Alta</p>
                         </div>
-                        <div class="text-right">
-                            <span class="block text-4xl font-bold text-blue-600 tracking-tighter" id="price-daikin">$0</span>
-                            <span class="text-[10px] font-bold text-green-600 uppercase tracking-tighter">Instalado IVA Inc.</span>
+                        <div class="text-center md:text-right">
+                            <span class="block text-2xl md:text-4xl font-bold text-blue-600" id="p-daikin">$0</span>
+                            <span class="text-[9px] font-bold text-green-600 uppercase">Instalado IVA Inc.</span>
                         </div>
                     </div>
                     
-                    <div class="space-y-4 mb-10 bg-indigo-50 p-6 rounded-3xl border border-indigo-100">
-                        <div class="flex items-center gap-3 text-indigo-900">
-                            <i class="fa-solid fa-check-circle text-indigo-500 text-xl"></i>
-                            <span class="text-sm font-bold italic">Kit 3m tuberías + interconexión incluido.</span>
-                        </div>
-                        <ul class="grid grid-cols-1 gap-2 text-xs text-indigo-400">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-minus"></i> Funcionamiento silencioso (Sleep Mode).</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-minus"></i> Eficiencia superior Clase A.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-minus"></i> Respaldo técnico especializado EasyCool.</li>
+                    <div class="bg-indigo-50/50 rounded-2xl p-5 mb-8 border border-indigo-100 text-sm">
+                        <ul class="space-y-3 text-slate-600 text-left">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-indigo-500"></i> <strong>Kit 3m tuberías + interconexión.</strong></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-indigo-500 text-xs"></i> Calidad Premium Japonesa.</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-indigo-500 text-xs"></i> Funcionamiento Silencioso.</li>
                         </ul>
                     </div>
 
-                    <a id="btn-order-daikin" href="#" class="mt-auto bg-slate-900 text-white text-center py-5 rounded-2xl font-bold uppercase tracking-widest shadow-xl transition hover:bg-indigo-600 text-xs">
-                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Solicitar Pack Daikin
+                    <a id="btn-daikin" href="#" class="mt-auto bg-slate-900 text-white text-center py-4 rounded-2xl font-bold hover:bg-slate-800 transition shadow-lg text-sm uppercase tracking-widest">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Solicitar Pack
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="mt-20 text-center">
-            <a id="btn-other" href="#" class="inline-flex items-center gap-3 text-blue-600 font-bold border-2 border-blue-600/20 px-10 py-4 rounded-2xl hover:bg-blue-600 hover:text-white transition-all text-sm uppercase tracking-widest shadow-sm">
-                <i class="fa-solid fa-circle-plus"></i> Otras Capacidades (12k/18k/24k BTU)
+        <!-- Consulta BTU -->
+        <div class="mt-12 text-center">
+            <a id="btn-btu" href="#" class="inline-flex items-center gap-2 text-blue-600 font-bold border-2 border-blue-600 px-6 py-3 rounded-2xl hover:bg-blue-600 hover:text-white transition text-xs md:text-sm">
+                <i class="fa-solid fa-plus-circle"></i> Consultar por 12.000 / 18.000 / 24.000 BTU
             </a>
         </div>
     </main>
 
-    <!-- Sección Servicios Técnicos (Texto de impacto sin restricción en título) -->
-    <section class="bg-slate-900 py-24 text-white" id="servicios">
+    <!-- Servicios -->
+    <section class="bg-slate-900 py-16 md:py-24 text-white" id="servicios">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="font-brand text-3xl md:text-5xl font-bold mb-6 tracking-tighter uppercase">Servicios Técnicos</h2>
-            <div class="w-16 h-1.5 bg-blue-500 mx-auto rounded-full mb-16"></div>
-            
-            <p class="text-slate-200 text-lg md:text-xl mb-20 font-medium max-w-3xl mx-auto leading-relaxed italic">
-                "Ingeniería de vanguardia y mano de obra certificada diseñada para garantizar su confort total y maximizar la vida útil de sus equipos."
-            </p>
+            <h2 class="text-2xl md:text-4xl font-bold mb-12 uppercase tracking-tighter">Servicios Técnicos</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Instalación -->
-                <div class="bg-white/5 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/10 flex flex-col items-center hover:border-blue-500 transition-colors group">
-                    <i class="fa-solid fa-screwdriver-wrench text-blue-500 text-4xl mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-brand text-xl font-bold mb-2 uppercase tracking-tighter">Instalación (Solo M.O.)</h4>
-                    <span class="text-3xl font-bold mb-4" id="price-mo">$0</span>
-                    <p class="text-slate-400 text-sm mb-10 leading-relaxed font-light">Para equipos del cliente. Incluye vacío 500 micrones <span class="italic">(solo particulares)</span>.</p>
-                    <a id="btn-mo" href="#" class="mt-auto text-blue-400 font-bold hover:text-white transition uppercase text-[10px] tracking-[0.2em]">Agendar Instalación &rarr;</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Instalacion -->
+                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 flex flex-col items-center">
+                    <i class="fa-solid fa-screwdriver-wrench text-blue-500 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2 uppercase text-sm">Instalación (Solo M.O.)</h4>
+                    <span class="text-2xl font-bold mb-4" id="p-mo">$0</span>
+                    <p class="text-slate-400 text-xs leading-relaxed">Para equipos del cliente. Incluye vacío 500 micrones (solo particulares).</p>
+                    <a id="btn-mo" href="#" class="mt-6 text-blue-400 font-bold uppercase text-[10px] tracking-widest">Agendar Ahora &rarr;</a>
                 </div>
 
-                <!-- Mantención Estrella -->
-                <div class="bg-blue-600 p-12 rounded-[2.5rem] shadow-2xl shadow-blue-900/50 flex flex-col items-center transform md:scale-110 z-10 border border-blue-400">
-                    <i class="fa-solid fa-spray-can-sparkles text-white text-4xl mb-6"></i>
-                    <h4 class="font-brand text-xl font-bold mb-2 uppercase tracking-tighter text-white">Mantención Full</h4>
-                    <span class="text-4xl font-bold mb-4 text-white" id="price-maint">$0</span>
-                    <p class="text-blue-100 text-sm mb-10 leading-relaxed">Hidrolavado profundo, <strong>vapor</strong>, sanitización y chequeo eléctrico <span class="italic">(solo particulares)</span>.</p>
-                    <a id="btn-maint" href="#" class="mt-auto bg-white text-blue-600 px-8 py-3 rounded-xl font-bold hover:bg-slate-100 transition shadow-lg uppercase text-xs tracking-widest">Solicitar Limpieza</a>
+                <!-- Mantencion -->
+                <div class="bg-blue-600 p-8 rounded-3xl shadow-xl flex flex-col items-center transform md:scale-105">
+                    <i class="fa-solid fa-spray-can-sparkles text-white text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2 uppercase text-sm">Mantención Full</h4>
+                    <span class="text-3xl font-bold mb-4" id="p-mant">$0</span>
+                    <p class="text-blue-100 text-xs leading-relaxed italic">Hidrolavado profundo, vapor, sanitización y chequeo eléctrico (solo particulares).</p>
+                    <a id="btn-mant" href="#" class="mt-6 bg-white text-blue-600 px-6 py-2 rounded-xl font-bold uppercase text-[10px]">Agendar Ahora</a>
                 </div>
 
-                <!-- Visita Técnica -->
-                <div class="bg-white/5 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/10 flex flex-col items-center hover:border-red-500 transition-colors group">
-                    <i class="fa-solid fa-house-medical-flag text-red-500 text-4xl mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-brand text-xl font-bold mb-2 uppercase tracking-tighter">Visita Técnica</h4>
-                    <span class="text-3xl font-bold mb-4" id="price-visit">$0</span>
-                    <p class="text-slate-400 text-sm mb-10 leading-relaxed font-light">Diagnóstico en terreno. Valor descontable de reparaciones <span class="italic">(solo particulares)</span>.</p>
-                    <a id="btn-visit" href="#" class="mt-auto text-red-400 font-bold hover:text-white transition uppercase text-[10px] tracking-[0.2em]">Pedir Técnico &rarr;</a>
+                <!-- Visita -->
+                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 flex flex-col items-center">
+                    <i class="fa-solid fa-house-medical-flag text-red-500 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2 uppercase text-sm">Visita Técnica</h4>
+                    <span class="text-2xl font-bold mb-4" id="p-visit">$0</span>
+                    <p class="text-slate-400 text-xs leading-relaxed">Diagnóstico en terreno. Valor descontable de reparaciones (solo particulares).</p>
+                    <a id="btn-visit" href="#" class="mt-6 text-red-400 font-bold uppercase text-[10px] tracking-widest">Solicitar Visita &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Corporativo -->
-    <footer class="bg-white py-20 border-t border-slate-100" id="contacto">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-16">
-            <div class="text-center md:text-left">
-                <!-- LOGO CORPORATIVO ORIGINAL EN FOOTER -->
-                <div class="flex items-center gap-3 justify-center md:justify-start mb-8 text-slate-900">
+    <!-- Footer -->
+    <footer class="bg-white py-12 md:py-20 border-t border-slate-100" id="contacto">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-3 mb-6">
                     <div class="w-10 h-10">
-                        <svg width="100%" height="100%" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="5" width="50" height="10" rx="5" fill="#3B82F6" opacity="0.8"/>
-                            <rect x="5" y="20" width="45" height="10" rx="5" fill="#60A5FA" opacity="0.9"/>
-                            <rect x="10" y="35" width="40" height="10" rx="5" fill="#93C5FD"/>
+                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="5" width="50" height="10" rx="5" fill="#2563eb" opacity="0.8"/>
+                            <rect x="5" y="20" width="45" height="10" rx="5" fill="#3b82f6" opacity="0.9"/>
+                            <rect x="10" y="35" width="40" height="10" rx="5" fill="#60a5fa"/>
                         </svg>
                     </div>
-                    <span class="font-brand font-bold text-2xl tracking-tighter uppercase">EasyCool</span>
+                    <span class="font-bold text-xl tracking-tighter uppercase">EasyCool Clima</span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0 font-light">
-                    Ingeniería de vanguardia y compromiso con la eficiencia energética para el clima de su hogar.
+                <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                    Ingeniería aplicada al confort térmico de su hogar. Calidad garantizada en Santiago RM.
                 </p>
             </div>
-            <div class="text-center md:text-left">
-                <h5 class="font-brand font-bold text-slate-900 mb-8 uppercase text-xs tracking-[0.3em]">Atención Santiago</h5>
+            <div>
+                <h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-slate-400">Contacto Directo</h5>
                 <ul class="space-y-4 text-sm text-slate-600">
-                    <li class="flex items-center justify-center md:justify-start gap-3"><i class="fa-brands fa-whatsapp text-green-500 text-xl"></i> +569 5777 6174</li>
-                    <li class="flex items-center justify-center md:justify-start gap-3"><i class="fa-solid fa-envelope text-blue-500"></i> ventas@easycoolclimatizacion.com</li>
-                    <li class="flex items-center justify-center md:justify-start gap-3"><i class="fa-solid fa-location-dot text-slate-300"></i> Providencia, Santiago (RM)</li>
+                    <li class="flex items-center justify-center md:justify-start gap-3"><i class="fa-brands fa-whatsapp text-green-500 text-lg"></i> +569 5777 6174</li>
+                    <li class="flex items-center justify-center md:justify-start gap-3"><i class="fa-solid fa-envelope text-blue-500 text-lg"></i> ventas@easycoolclimatizacion.com</li>
                 </ul>
             </div>
-            <div class="text-center md:text-left border-t md:border-t-0 pt-10 md:pt-0">
-                <h5 class="font-brand font-bold text-slate-900 mb-8 uppercase text-xs tracking-[0.3em]">Disponibilidad</h5>
-                <div class="bg-slate-50 p-6 rounded-3xl inline-block w-full border border-slate-100 text-center md:text-left">
-                    <div class="flex justify-between text-xs mb-3 font-bold uppercase tracking-widest"><span>Lun - Vie</span> <span class="text-blue-600">08:30 - 18:30</span></div>
-                    <div class="flex justify-between text-xs text-slate-400 font-medium uppercase tracking-widest"><span>Sábados</span> <span class="text-slate-500">09:00 - 14:00</span></div>
+            <div>
+                <h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-slate-400 text-center md:text-left">Horarios</h5>
+                <div class="text-sm text-slate-600 text-center md:text-left">
+                    <p class="mb-2 font-medium">Lunes a Viernes: 08:30 - 18:30</p>
+                    <p>Sábados: 09:00 - 14:00</p>
                 </div>
             </div>
         </div>
-        <div class="text-center mt-20 pt-8 border-t border-slate-50">
-            <p class="text-slate-300 text-[9px] uppercase font-bold tracking-[0.5em]">© 2024 EasyCool Climatización - Santiago, Chile</p>
+        <div class="text-center mt-12 pt-8 border-t border-slate-50 text-[10px] text-slate-400 uppercase tracking-widest">
+            © 2024 EasyCool Climatización - Santiago
         </div>
     </footer>
 
-    <!-- Panel de Control y WhatsApp Logic -->
     <script>
-        const CATALOG_CONFIG = {
-            prices: {
+        const CONFIG = {
+            precios: {
                 hisense: "430.000",
                 daikin: "550.000",
                 mo: "130.000",
-                maint: "45.000",
+                mant: "45.000",
                 visit: "35.000"
             },
-            whatsapp: "56957776174"
+            wsp: "56957776174"
         };
 
-        function startApp() {
-            // Actualizar Precios en pantalla
-            document.getElementById('price-hisense').innerText = `$${CATALOG_CONFIG.prices.hisense}`;
-            document.getElementById('price-daikin').innerText = `$${CATALOG_CONFIG.prices.daikin}`;
-            document.getElementById('price-mo').innerText = `$${CATALOG_CONFIG.prices.mo}`;
-            document.getElementById('price-maint').innerText = `$${CATALOG_CONFIG.prices.maint}`;
-            document.getElementById('price-visit').innerText = `$${CATALOG_CONFIG.prices.visit}`;
+        function init() {
+            // Precios
+            document.getElementById('p-hisense').innerText = `$${CONFIG.precios.hisense}`;
+            document.getElementById('p-daikin').innerText = `$${CONFIG.precios.daikin}`;
+            document.getElementById('p-mo').innerText = `$${CONFIG.precios.mo}`;
+            document.getElementById('p-mant').innerText = `$${CONFIG.precios.mant}`;
+            document.getElementById('p-visit').innerText = `$${CONFIG.precios.visit}`;
 
-            // Configuración de mensajes de WhatsApp
-            const base = `https://wa.me/${CATALOG_CONFIG.whatsapp}?text=`;
-            const mapping = {
-                'nav-btn-wsp': 'Hola EasyCool, consulto por un servicio desde su catálogo web.',
-                'float-btn-wsp': 'Hola EasyCool, necesito realizar una consulta técnica sobre aire acondicionado.',
-                'btn-order-hisense': `Hola, deseo solicitar el Pack Hisense 9.000 BTU instalado ($${CATALOG_CONFIG.prices.hisense}).`,
-                'btn-order-daikin': `Hola, deseo solicitar el Pack Daikin 9.000 BTU instalado ($${CATALOG_CONFIG.prices.daikin}).`,
-                'btn-other': 'Hola EasyCool, me gustaría consultar por equipos de mayor capacidad (12k/18k/24k BTU).',
-                'btn-mo': `Solicito agendar Instalación (Mano de Obra) particulares ($${CATALOG_CONFIG.prices.mo}).`,
-                'btn-maint': `Solicito agendar Mantención Full (Hidrolavado+Vapor) particulares ($${CATALOG_CONFIG.prices.maint}).`,
-                'btn-visit': `Solicito una Visita Técnica para diagnóstico particulares ($${CATALOG_CONFIG.prices.visit}).`
+            // Enlaces WhatsApp
+            const url = `https://wa.me/${CONFIG.wsp}?text=`;
+            const map = {
+                'nav-wsp': 'Hola EasyCool, consulto desde su catálogo web.',
+                'float-wsp': 'Hola EasyCool, tengo una consulta técnica.',
+                'btn-hisense': `Hola EasyCool, solicito el Pack Hisense instalado ($${CONFIG.precios.hisense}).`,
+                'btn-daikin': `Hola EasyCool, solicito el Pack Daikin instalado ($${CONFIG.precios.daikin}).`,
+                'btn-btu': 'Hola EasyCool, consulto por equipos de mayor capacidad (12k/18k/24k BTU).',
+                'btn-mo': `Deseo agendar Instalación (Mano de Obra) particulares ($${CONFIG.precios.mo}).`,
+                'btn-mant': `Deseo agendar Mantención Full (Hidrolavado+Vapor) particulares ($${CONFIG.precios.mant}).`,
+                'btn-visit': `Solicito una Visita Técnica para particulares ($${CONFIG.precios.visit}).`
             };
 
-            for (const id in mapping) {
+            for (const id in map) {
                 const el = document.getElementById(id);
-                if (el) el.href = base + encodeURIComponent(mapping[id]);
+                if (el) el.href = url + encodeURIComponent(map[id]);
             }
         }
-
-        window.addEventListener('DOMContentLoaded', startApp);
+        window.addEventListener('DOMContentLoaded', init);
     </script>
 
 </body>
